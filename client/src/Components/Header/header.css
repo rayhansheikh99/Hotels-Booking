@@ -1,0 +1,36 @@
+.header{
+    background-color: rgb(56, 56, 238);
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+}
+.header-container{
+    width: 100%;
+    max-width: 1024px;
+    margin: 20px 0px 100px 0px;
+}
+.header-list{
+    display: flex;
+    gap: 40px;
+}
+.header-list-item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.header-list-item.active{
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 20px;
+}
+.header-desc{
+    margin: 20px 0
+}
+.header-btn{
+    padding: 10px;
+    background-color: rgb(19, 104, 214);
+    color: white;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
