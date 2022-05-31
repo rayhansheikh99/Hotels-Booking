@@ -6,7 +6,7 @@ import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import {format} from "date-fns"
 import { faBed, faCalendarDays, faCar, faMagnet, faMapLocationDot, faPlane, faTaxi, faUserGroup } from '@fortawesome/free-solid-svg-icons'
-const Header = () => {
+const Header = ({type}) => {
     const [openDate, setOpenDate] = useState(false)
     const [date, setDate] = useState([
         {
@@ -34,7 +34,7 @@ const Header = () => {
 
     return (
         <div className='header'>
-            <div className='header-container'> 
+            <div className={type ==="list" ? "header-container listMode" : 'header-container'}> 
                 <div className="header-list">
                     <div className="header-list-item active">
                     <FontAwesomeIcon icon={faBed} />
@@ -57,6 +57,8 @@ const Header = () => {
                     <span>Airport Taxis</span>
                     </div>
                 </div>
+                { type!== "list" &&
+                <>         
                 <h1 className='header-title'>A lifetime of discounts? It's Genius.</h1>
                 <p className='header-desc'>Get rewarded for your travels – unlock instant savings of 10% or more with a free Booking.com account</p>
                 <button className='header-btn'>Sign In / Register</button>
@@ -114,6 +116,7 @@ const Header = () => {
                     <button className='header-btn'>Search</button>
                     </div>
                 </div>
+                </>  }
             </div>
         </div>
     );
