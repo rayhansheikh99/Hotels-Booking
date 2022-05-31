@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import "./header.css";
+import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { DateRange } from 'react-date-range';
 import 'react-date-range/dist/styles.css'; // main css file
@@ -7,6 +8,7 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 import {format} from "date-fns"
 import { faBed, faCalendarDays, faCar, faMagnet, faMapLocationDot, faPlane, faTaxi, faUserGroup } from '@fortawesome/free-solid-svg-icons'
 const Header = ({type}) => {
+    const [destination, setDestination] = useState('')
     const [openDate, setOpenDate] = useState(false)
     const [date, setDate] = useState([
         {
@@ -23,6 +25,8 @@ const Header = ({type}) => {
         room:1
     })
 
+    const navigate = useNavigate()
+
     const handleOption = (name, operation) => {
         setOptions((prev)=> {
             return {
@@ -30,6 +34,10 @@ const Header = ({type}) => {
                 [name]: operation === "i" ? options[name] + 1 : options[name] - 1
             }
         })
+    }
+
+    const handleSearch = () => {
+        navigate("/hotels", {state:{destination, date, options}})
     }
 
     return (
@@ -66,7 +74,11 @@ const Header = ({type}) => {
                 <div className="header-search">
                     <div className="header-search-item">
                     <FontAwesomeIcon className='header-icon' icon={faMapLocationDot} />
-                    <input type="text" placeholder='Where are you going?' className="header-search-input"/>
+                    <input type="text" 
+                    placeholder='Where are you going?' 
+                    className="header-search-input"
+                    onChange={e=>setDestination(e.target.value)}
+                    />
                     </div>
                     <div className="header-search-item">
                     <FontAwesomeIcon className='header-icon' icon={faCalendarDays} />
@@ -75,6 +87,7 @@ const Header = ({type}) => {
                     editableDateInputs={true}
                     onChange={item => setDate([item.selection])}
                     moveRangeOnFirstSelection={false}
+                    minDate = {new Date()}
                     ranges={date}
                     className="date"/>}
                     </div>
@@ -113,7 +126,7 @@ const Header = ({type}) => {
                     </div>}
                     </div>
                     <div className="header-search-item">
-                    <button className='header-btn'>Search</button>
+                    <button className='header-btn' onClick={handleSearch}>Search</button>
                     </div>
                 </div>
                 </>  }
