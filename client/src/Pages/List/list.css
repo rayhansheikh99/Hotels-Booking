@@ -75,7 +75,7 @@
 
 .list-search>button {
     padding: 10px;
-    background-color: #145077;
+    background-color: #077581;
     color: white;
     border: 1px solid transparent;
     width: 100%;
@@ -85,6 +85,6 @@
 }
 .list-search>button:hover {
     background-color: transparent;
-    border: 1px solid rgb(4, 87, 134);
+    border: 1px solid #077581;
     color: #555;
 }

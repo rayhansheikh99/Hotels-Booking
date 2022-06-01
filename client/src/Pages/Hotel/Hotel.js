@@ -4,6 +4,8 @@ import Header from '../../Components/Header/Header';
 import Navbar from '../../Components/Navbar/Navbar';
 import "./hotel.css"
 import { faMapLocationDot } from '@fortawesome/free-solid-svg-icons';
+import MailList from './../../Components/MailList/MailList';
+import Footer from './../../Components/Footer/Footer';
 
 const Hotel = () => {
 
@@ -34,6 +36,7 @@ const Hotel = () => {
             <Header type="list"/>
             <div className='hotel-container'>
                 <div className='hotel-wrapper'>
+                    <button className='book-now-btn'>Reserve or Book Now!</button>
                     <h1 className='hotel-title'>Grand Hotel</h1>
                     <div className='hotel-address'>
                         <FontAwesomeIcon icon={faMapLocationDot}/>
@@ -41,7 +44,7 @@ const Hotel = () => {
                     </div>
                     <span className='hotel-distance'>Excellent location - 600m from center</span>
                     <span className='hotel-price-highlight'>Book a stay over $120 at this property and get a free airport taxi</span>
-                    <div className='hotel-img'>
+                    <div className='hotel-images'>
                         {photos.map(photo => (
                             <div className='hotel-img-wrapper'>
                                 <img src={photo.src} alt="" className='hotel-img'/>
@@ -58,10 +61,15 @@ const Hotel = () => {
                         <div className='hotel-details-price'>
                             <h1>Perfect for a 7-night stay!</h1>
                             <span>Located in the real heart of Dhaka, this property has an excellent location score of 8.88</span>
-                            
+                            <h2>
+                                <b>$855</b> (8 nights)
+                            </h2>
+                            <button className='book-btn'>Reserve or Book Now!</button>
                         </div>
                     </div>
                 </div>
+                <MailList/>
+                <Footer/>
             </div>
         </div>
     );
