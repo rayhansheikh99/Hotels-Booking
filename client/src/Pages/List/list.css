@@ -18,7 +18,7 @@
     border-radius: 10px;
     position: sticky;
     top: 10px;
-
+    height: max-content;
 }
 
 .list-result {
@@ -75,8 +75,8 @@
 
 .list-search>button {
     padding: 10px;
-    background-color: rgb(4, 87, 134);
-    color: aliceblue;
+    background-color: #145077;
+    color: white;
     border: 1px solid transparent;
     width: 100%;
     font-weight: 500;
