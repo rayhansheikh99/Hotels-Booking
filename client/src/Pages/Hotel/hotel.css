@@ -64,6 +64,7 @@
 .hotel-img {
     width: 100%;
     object-fit: cover;
+    height: 300px;
 }
 
 .hotel-img-wrapper {
@@ -121,4 +122,46 @@
     border: 1px solid #077581;
     background-color: transparent;
     color: #077581; 
+}
+
+.slider {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.404);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+
+}
+
+.slider-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-img {
+    width: 80%;
+    height: 80vh;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: lightgray;
+}
+
+.arrow {
+    margin: 20px;
+    font-size: 50px;
+    cursor: pointer;
+    color: lightgray;
 }
