@@ -65,6 +65,10 @@
     width: 100%;
     object-fit: cover;
     height: 300px;
+    border-radius:5px;
+}
+.hotel-img:hover {
+    transform: scale(0.95);
 }
 
 .hotel-img-wrapper {

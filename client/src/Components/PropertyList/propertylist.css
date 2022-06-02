@@ -18,10 +18,30 @@
     height: 150px;
     object-fit: cover;
 }
+.p-list-img:hover {
+    transform: scale(1.10);
+    transition: ease-in 600ms;
+}
 
 .p-list-titles>h1 {
     font-size: 18px;
+    width: max-content;
 }
+.p-list-titles>h1:hover {
+    color: rgb(4, 177, 96);
+}
+.p-list-titles>h1:hover::after {
+    content: '';
+    display: block;
+    position: relative;
+    width: 50%;
+    border-bottom: 2px solid rgb(4, 177, 96);
+    padding-bottom: 5px;
+    margin:auto;
+    transition: ease-in 600ms;
+    
+}
+
 .p-list-titles>h2 {
     font-size: 14px;
     font-weight: 300;

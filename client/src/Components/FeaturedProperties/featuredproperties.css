@@ -17,9 +17,17 @@
     width: 100%;
     height: 170px;
 }
+.fp-img:hover {
+    transform: scale(1.10);
+    transition: ease-in 600ms;
+}
 
 .fp-name {
     font-weight: bold;
+}
+.fp-name:hover {
+    color: rgb(4, 177, 96);
+    cursor: pointer;
 }
 
 .fp-city {

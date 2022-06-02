@@ -23,6 +23,12 @@
     object-fit: cover;
     
 }
+.featured-img:hover {
+    
+    transform: scale(1.10);
+    transition: ease-in 600ms;
+    
+}
 
 .featured-titles {
     position: absolute;
